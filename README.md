@@ -6,3 +6,4 @@ An application to demonstrate [Android Mobile Vision’s face detection API](htt
 
 This README is just a placeholder; I’ll post a full README once the article is done.# HealthApp
 # HealthApp
+# HealthApp
