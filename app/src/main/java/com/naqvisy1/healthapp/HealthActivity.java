@@ -1,8 +1,6 @@
-package com.raywenderlich.facespotter;
+package com.naqvisy1.healthapp;
 
-import android.app.ListActivity;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import ai.api.AIListener;
 import ai.api.android.AIConfiguration;
@@ -10,35 +8,40 @@ import ai.api.android.AIService;
 import ai.api.model.AIError;
 import ai.api.model.AIResponse;
 import ai.api.model.Result;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.JsonElement;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class HealthActivity extends ActionBarActivity implements AIListener {
     private Button listenButton;
     private TextView resultTextView;
     private TextView userInput;
+    private FirebaseAuth firebaseAuth;
+    private DatabaseReference databaseReference;
     private TextView aiResponse;
     private AIService aiService;
     List<String> myItems = new ArrayList<String>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+        firebaseAuth = FirebaseAuth.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
         listenButton = (Button) findViewById(R.id.listenButton);
         resultTextView = (TextView) findViewById(R.id.resultTextView);
         userInput = (TextView) findViewById(R.id.userInput);
@@ -81,6 +84,11 @@ public class HealthActivity extends ActionBarActivity implements AIListener {
         }
 
         userInput.setText(result.getResolvedQuery());
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        HashMap<String, String> speech = new HashMap<String, String>();
+        speech.put("Input", result.getResolvedQuery());
+        speech.put("Output", result.getFulfillment().getSpeech());
+        databaseReference.child("Speech").setValue(speech);
         aiResponse.setText(result.getFulfillment().getSpeech());
 
         myItems.add(result.getResolvedQuery());

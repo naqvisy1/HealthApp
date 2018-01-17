@@ -16,7 +16,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.raywenderlich.facespotter"
+        applicationId "com.naqvisy1.healthapp"
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
@@ -50,5 +50,6 @@ dependencies {
     compile 'ai.api:sdk:2.0.7@aar'
     compile 'com.affectiva.android:affdexsdk:3.2'
     compile 'ai.api:libai:1.4.8'
-    compile 'com.google.android.gms:play-services:5.+'
+    compile 'com.google.android.gms:play-services:11.0.4'
 }
+apply plugin: 'com.google.gms.google-services'

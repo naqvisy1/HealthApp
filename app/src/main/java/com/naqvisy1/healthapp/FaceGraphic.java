@@ -27,18 +27,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.raywenderlich.facespotter;
+package com.naqvisy1.healthapp;
 
 import android.content.Context;
-import com.raywenderlich.facespotter.R;
 import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
 
 import com.google.android.gms.vision.face.Face;
-import com.raywenderlich.facespotter.ui.camera.GraphicOverlay;
+import com.naqvisy1.healthapp.ui.camera.GraphicOverlay;
 
 
 class FaceGraphic extends GraphicOverlay.Graphic {

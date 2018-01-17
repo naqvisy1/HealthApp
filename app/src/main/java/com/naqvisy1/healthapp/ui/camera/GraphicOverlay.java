@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.raywenderlich.facespotter.ui.camera;
+package com.naqvisy1.healthapp.ui.camera;
 
 import android.content.Context;
 import android.graphics.Canvas;

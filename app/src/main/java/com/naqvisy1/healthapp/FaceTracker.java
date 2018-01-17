@@ -27,7 +27,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.raywenderlich.facespotter;
+package com.naqvisy1.healthapp;
 
 import android.content.Context;
 import android.graphics.PointF;
@@ -36,7 +36,7 @@ import com.google.android.gms.vision.Tracker;
 import com.google.android.gms.vision.face.Face;
 import com.google.android.gms.vision.face.FaceDetector;
 import com.google.android.gms.vision.face.Landmark;
-import com.raywenderlich.facespotter.ui.camera.GraphicOverlay;
+import com.naqvisy1.healthapp.ui.camera.GraphicOverlay;
 
 import java.util.HashMap;
 import java.util.Map;

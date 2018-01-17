@@ -27,7 +27,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.raywenderlich.facespotter;
+package com.naqvisy1.healthapp;
 
 import android.Manifest;
 import android.app.Activity;
@@ -47,7 +47,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -58,8 +57,8 @@ import com.google.android.gms.vision.MultiProcessor;
 import com.google.android.gms.vision.Tracker;
 import com.google.android.gms.vision.face.Face;
 import com.google.android.gms.vision.face.FaceDetector;
-import com.raywenderlich.facespotter.ui.camera.CameraSourcePreview;
-import com.raywenderlich.facespotter.ui.camera.GraphicOverlay;
+import com.naqvisy1.healthapp.ui.camera.CameraSourcePreview;
+import com.naqvisy1.healthapp.ui.camera.GraphicOverlay;
 
 import java.io.IOException;
 
@@ -106,10 +105,6 @@ public final class FaceActivity extends AppCompatActivity {
     Button chatbutton = (Button)findViewById(R.id.chatbutton);
     chatbutton.setOnClickListener(mChatbuttonListener);
 
-    ImageView myImg=(ImageView)findViewById(R.id.pict);
-    myImg.setImageResource(R.drawable.happy_star);
-
-    getResources().openRawResource(R.raw.happy_star);
 
 
     if (savedInstanceState != null) {
